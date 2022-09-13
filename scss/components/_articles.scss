@@ -1,0 +1,12 @@
+@use 'abstracts' as a;
+
+.article-info {
+	font-size: a.$fs-small;
+	dd {
+		margin-bottom: 0;
+	}
+}
+
+.readmore {
+	margin: a.$line-height auto;
+}

@@ -1,0 +1,15 @@
+@use 'abstracts' as a;
+
+[class*='tag-'] {
+	border: 1px solid transparent;
+	text-transform: lowercase;
+	// font-variant: small-caps;
+	.btn {
+		// display: block;
+		padding: 0.25em 0.75em;
+		border-radius: 1000vw;
+		font-size: a.$fs-small;
+		border: 0 none;
+		// letter-spacing: 0.05em;
+	}
+}

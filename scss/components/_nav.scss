@@ -1,0 +1,70 @@
+@use 'abstracts' as a;
+
+.skip-link {
+	position: absolute;
+	top: 0;
+	left: 0;
+	border: 3px solid var(--clr-info);
+	background: var(--clr-contrast-bg);
+	color: var(--clr-contrast-txt);
+	font-weight: 700;
+	padding: 1rem;
+	transition: cubic-bezier(0.23, 1, 0.32, 1) all 0.3s;
+	transform: translateY(-110%);
+	border-radius: 0 0 0.5rem 0.5rem;
+	&:focus,
+	&:focus-within {
+		transform: translateY(0);
+	}
+}
+
+nav,
+.nav {
+	@include a.unstyled-list;
+	font-family: a.$fnt-alt;
+}
+
+.mainnav {
+	// position: fixed;
+	position: absolute;
+	top: 100%;
+	right: 0;
+	left: 0;
+	max-width: 100%;
+	transition: all 0.3s ease-in-out;
+	transform-origin: top;
+	z-index: 1;
+	@include a.bp(medium) {
+		position: static;
+	}
+	&[data-collapse='true'] {
+		// transform: translateX(100%);
+		opacity: 0;
+		transform: none;
+		display: none;
+		@include a.bp(medium) {
+			opacity: 1;
+			display: block;
+		}
+	}
+	&[data-collapse='false'] {
+		// transform: translateX(0);
+		opacity: 1;
+		display: block;
+	}
+}
+
+.mainnav .nav {
+	display: flex;
+	flex-direction: column;
+}
+
+.mainnav a {
+	display: block;
+}
+
+.pagenavigation .pagination {
+	@include a.unstyled-list;
+	display: flex;
+	justify-content: space-between;
+}

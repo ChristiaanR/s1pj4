@@ -1,0 +1,23 @@
+@use 'abstracts' as *;
+
+// Utility colors are class-based colors eg. .btn-warning, .link-warning
+// Each color (like primary) has a value(like purple) in the color-map defined in _variables
+
+@each $color, $value in $utility-colors {
+	.link-#{$color} {
+		color: $value;
+	}
+
+	.btn-#{$color} {
+		background: $value;
+
+		// the text color is based on the contrast with the background defined in _functions
+		color: contrastText($value);
+		text-shadow: 1px 1px 1px rgb(0 0 0 /0.5);
+		border-color: lighten($value, 8%) darken($value, 12%) darken($value, 12%) lighten($value, 8%);
+		&:hover,
+		&:active {
+			opacity: 0.7;
+		}
+	}
+}

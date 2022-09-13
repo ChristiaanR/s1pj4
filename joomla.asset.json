@@ -1,0 +1,53 @@
+{
+  "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
+  "name": "j4test",
+  "version": "1.0",
+  "description": "Joomla 4 template",
+  "license": "GPL-2.0-or-later",
+  "assets": [
+    {
+      "name": "template.j4test.css",
+      "type": "style",
+      "uri": "template.css",
+      "dependencies": [
+        "fontawesome"
+      ]
+    },
+    {
+      "name": "template.j4test.user",
+      "type": "style",
+      "uri": "user.css"
+    },
+    {
+      "name": "template.j4test",
+      "type": "preset",
+      "dependencies": [
+        "template.j4test.css#style",
+        "template.j4test.user#style"
+      ]
+    },
+    {
+      "name": "frontediting.css",
+      "type": "style",
+      "uri": "system/frontediting.css"
+    },
+    {
+      "name": "searchtools",
+      "type": "style",
+      "uri": "system/searchtools/searchtools.min.css"
+    },
+    {
+      "name": "fontawesome",
+      "type": "style",
+      "uri": "system/joomla-fontawesome.min.css"
+    },
+    {
+      "name": "template.j4test.js",
+      "type": "script",
+      "uri": "template.js",
+      "attributes": {
+        "defer": true
+      }
+    }
+  ]
+}

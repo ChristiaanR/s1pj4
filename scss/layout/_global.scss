@@ -1,0 +1,9 @@
+@use 'abstracts' as a;
+
+.container {
+	margin: 0 auto;
+	width: a.$container-size;
+}
+main {
+	isolation: isolate;
+}

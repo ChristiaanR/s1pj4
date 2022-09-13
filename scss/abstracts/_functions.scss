@@ -1,0 +1,10 @@
+@use 'variables' as v;
+
+// use a dark or light text-color, based on the lightness value (hsl) of the background
+@function contrastText($clr) {
+	@if (lightness($clr) > 40) {
+		@return black;
+	} @else {
+		@return white;
+	}
+}

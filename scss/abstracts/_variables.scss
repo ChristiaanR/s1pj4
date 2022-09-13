@@ -1,0 +1,68 @@
+// Paths - change for production: css will also be stored in media
+
+$img-path: '../../media/templates/j4test/img';
+
+// Fonts
+$fnt-base: 'Raleway', serif;
+$fnt-head: 'Bitter', serif;
+$fnt-alt: 'Bitter', sans-serif;
+$fnt-accent: Arial, sans-serif;
+
+$fs-h1: 3rem;
+$fs-h2: 2.125rem;
+$fs-h3: 1.5rem;
+$fs-h4: 1.25rem;
+$fs-h5: 1rem;
+$fs-body: 1rem;
+$fs-small: 0.875rem;
+$fs-min: 0.75rem;
+
+$line-height: 1.6em;
+
+// Space
+
+$container-size: 90%;
+$container-size-small: 95%;
+$container-size-large: 80%;
+
+$space-fixed: 1rem;
+$space-fixed-small: 0.5rem;
+$space-fixed-mini: 0.2rem;
+$space-fixed-large: 2rem;
+
+$space-relative: 1em;
+$space-relative-small: $line-height * 0.5;
+$space-relative-mini: $line-height * 0.1;
+$space-relative-large: 2em;
+
+//movement
+
+$tf-base: 0.15s ease;
+$tf-small: 0.3s ease;
+$tf-large: 0.5s ease;
+
+// utility-colors
+
+$utility-colors: (
+	'primary': hsl(193, 74%, 16%),
+	'secondary': hsl(0, 0%, 30%),
+	'success': hsl(120, 100%, 25%),
+	'info': hsl(180, 100%, 25%),
+	'warning': hsl(60, 100%, 50%),
+	'danger': hsl(0, 100%, 40%),
+	'light': hsl(0, 0%, 90%),
+	'dark': hsl(0, 0%, 20%),
+	// 'primary': var(--clr-primary),
+	// 'secondary': var(--clr-secondary),
+	// 'success': var(--clr-success),
+	// 'info': var(--clr-info),
+	// 'warning': var(--clr-warning),
+	// 'danger': var(--clr-danger),
+	// 'light': var(--clr--light),
+	// 'dark': var(--clr-dark),,,,,,,,,,,,,,,
+);
+
+$trans-dark: rgba(0, 0, 0, 0.25);
+$trans-light: rgba(255, 255, 255, 0.25);
+
+// Theme colors in custom properties in theme

@@ -1,0 +1,99 @@
+@use 'abstracts' as a;
+
+:root {
+	--clr-primary: hsl(193, 74%, 16%);
+	--clr-primary-light: hsl(193, 44%, 56%);
+	--clr-primary-dark: hsl(193, 44%, 6%);
+
+	--clr-accent: hsl(311, 64%, 27%);
+	--clr-accent-light: hsl(311, 44%, 67%);
+	--clr-accent-dark: hsl(311, 44%, 17%);
+
+	--clr-extra: hsl(56, 100%, 47%);
+	--clr-extra-light: hsl(56, 70%, 77%);
+	--clr-extra-dark: hsl(56, 70%, 27%);
+
+	--clr-white: hsl(0, 100%, 100%);
+	--clr-neutral-100: hsl(163, 7%, 81%);
+	--clr-neutral-300: hsl(163, 7%, 61%);
+	--clr-neutral-500: hsl(163, 7%, 51%);
+	--clr-neutral-700: hsl(163, 7%, 31%);
+	--clr-neutral-900: hsl(163, 7%, 21%);
+	--clr-black: hsl(163, 7%, 10%);
+
+	--clr-secondary: var(--clr-neutral-300);
+	--clr-success: green;
+	--clr-danger: red;
+	--clr-warning: yellow;
+	--clr-info: teal;
+}
+
+body {
+	color: var(--text-color);
+	background-color: var(--background-color);
+}
+.mainnav {
+	background-color: var(--background-color);
+}
+a {
+	color: var(--link-color);
+	&:hover,
+	&:active {
+		color: var(--link-hover-color);
+	}
+	&.btn:hover,
+	&.btn:active {
+		color: var(--link-hover-alt);
+	}
+}
+h1,
+h2,
+h3,
+h4 {
+	color: var(--clr-heading);
+}
+
+.text-muted {
+	opacity: 0.75;
+	/*
+	Adding opacity creates a different layering and it's getting added as the top layer.
+	To counteract this we need to add a z-index, but that only works on a positioned element.
+	So, we give it a position: relative
+	*/
+	position: relative;
+	z-index: -1;
+}
+
+[role='tooltip'] {
+	background-color: var(--clr-neutral-700);
+	color: var(--background-color);
+	border-color: var(--link-hover-color);
+	box-shadow: 0 0 15px 5px var(--clr-shadow);
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		--text-color: var(--clr-black);
+		--background-color: var(--clr-neutral-100);
+		--link-color: var(--clr-accent);
+		--link-hover-color: var(--clr-accent-dark);
+		--link-hover-alt: var(--clr-white);
+		--clr-heading: var(--clr-accent);
+		--clr-contrast-bg: #000;
+		--clr-contrast-txt: #fff;
+		--clr-shadow: #{a.$trans-dark};
+	}
+}
+@media (prefers-color-scheme: dark) {
+	:root {
+		--text-color: var(--clr-neutral-100);
+		--background-color: var(--clr-primary-dark);
+		--link-color: var(--clr-accent-light);
+		--link-hover-color: var(--clr-accent);
+		--link-hover-alt: var(--clr-accent-light);
+		--clr-heading: var(--clr-accent-light);
+		--clr-contrast-bg: #fff;
+		--clr-contrast-txt: #000;
+		--clr-shadow: #{a.$trans-light};
+	}
+}

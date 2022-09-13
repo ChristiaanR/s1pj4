@@ -1,0 +1,12 @@
+@use 'abstracts' as a;
+
+.mod-breadcrumbs {
+	@include a.unstyled-list;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.breadcrumb-item::before {
+	content: '»';
+	margin: 0 1ch;
+}

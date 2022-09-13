@@ -1,0 +1,40 @@
+@use 'abstracts' as a;
+
+.only-sm {
+	@include a.bp(small) {
+		display: inherit;
+	}
+	@include a.bp(medium) {
+		display: none;
+	}
+	@include a.bp(large) {
+		display: none;
+	}
+}
+.only-md {
+	@include a.bp(small) {
+		display: none;
+	}
+	@include a.bp(medium) {
+		display: inherit;
+	}
+	@include a.bp(large) {
+		display: none;
+	}
+}
+.only-lg {
+	@include a.bp(small) {
+		display: none;
+	}
+	@include a.bp(medium) {
+		display: none;
+	}
+	@include a.bp(large) {
+		display: inherit;
+	}
+}
+
+header {
+	//for offscreen nav
+	// overflow: hidden;
+}

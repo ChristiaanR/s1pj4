@@ -1,0 +1,12 @@
+@use 'abstracts' as a;
+
+ol,
+ul {
+	padding-inline-start: 3ch;
+}
+
+.list-inline {
+	@include a.unstyled-list;
+	display: flex;
+	gap: a.$space-relative-small;
+}

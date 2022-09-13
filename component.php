@@ -2,7 +2,7 @@
 
 /**
  * @package     Joomla.Site
- * @subpackage  Templates.j4test
+ * @subpackage  Templates.s1pj4
  *
  * @copyright   (C) 2017 Open Source Matters, Inc. <https://www.joomla.org>
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
@@ -18,8 +18,8 @@ use Joomla\CMS\HTML\HTMLHelper;
 $app = Factory::getApplication();
 $wa  = $this->getWebAssetManager();
 
-$wa->usePreset('template.j4test');
-$wa->useScript('template.j4test.js');
+$wa->usePreset('template.s1pj4');
+$wa->useScript('template.s1pj4.js');
 
 ?>
 <!DOCTYPE html>

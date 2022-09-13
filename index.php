@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @package     J4test
+ * @package     s1pj4
  *
  * @copyright   Copyright (C) 2022 Christiaan Ruiter. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
@@ -27,8 +27,8 @@ $sitename = htmlspecialchars($app->get('sitename'), ENT_QUOTES, 'UTF-8');
 $menu     = $app->getMenu()->getActive();
 $pageclass = $menu !== null ? $menu->getParams()->get('pageclass_sfx', '') : '';
 
-$wa->usePreset('template.j4test');
-$wa->useScript('template.j4test.js');
+$wa->usePreset('template.s1pj4');
+$wa->useScript('template.s1pj4.js');
 
 $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
 $this->setMetaData('color-scheme', 'light dark');
@@ -43,8 +43,8 @@ $this->setMetaData('generator', '');
   <jdoc:include type="metas" />
   <jdoc:include type="styles" />
   <jdoc:include type="scripts" />
-  <link rel="stylesheet" href="./templates/j4test/css/template.css">
-  <script src="./templates/j4test/js/template.js"></script>
+  <link rel="stylesheet" href="./templates/s1pj4/css/template.css">
+  <script src="./templates/s1pj4/js/template.js"></script>
   <!-- Google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

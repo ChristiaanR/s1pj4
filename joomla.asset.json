@@ -1,12 +1,12 @@
 {
   "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
-  "name": "j4test",
+  "name": "s1pj4",
   "version": "1.0",
   "description": "Joomla 4 template",
   "license": "GPL-2.0-or-later",
   "assets": [
     {
-      "name": "template.j4test.css",
+      "name": "template.s1pj4.css",
       "type": "style",
       "uri": "template.css",
       "dependencies": [
@@ -14,16 +14,16 @@
       ]
     },
     {
-      "name": "template.j4test.user",
+      "name": "template.s1pj4.user",
       "type": "style",
       "uri": "user.css"
     },
     {
-      "name": "template.j4test",
+      "name": "template.s1pj4",
       "type": "preset",
       "dependencies": [
-        "template.j4test.css#style",
-        "template.j4test.user#style"
+        "template.s1pj4.css#style",
+        "template.s1pj4.user#style"
       ]
     },
     {
@@ -42,7 +42,7 @@
       "uri": "system/joomla-fontawesome.min.css"
     },
     {
-      "name": "template.j4test.js",
+      "name": "template.s1pj4.js",
       "type": "script",
       "uri": "template.js",
       "attributes": {

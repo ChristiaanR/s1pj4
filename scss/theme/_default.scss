@@ -1,25 +1,26 @@
 @use 'abstracts' as a;
 
 :root {
-	--clr-primary: hsl(193, 74%, 16%);
-	--clr-primary-light: hsl(193, 44%, 56%);
-	--clr-primary-dark: hsl(193, 44%, 6%);
+	--clr-primary: hsl(125, 66%, 35%);
+	--clr-primary-light: hsl(125, 25%, 85%);
+	--clr-primary-dark: hsl(125, 44%, 16%);
 
-	--clr-accent: hsl(311, 64%, 27%);
-	--clr-accent-light: hsl(311, 44%, 67%);
-	--clr-accent-dark: hsl(311, 44%, 17%);
+	--clr-accent: hsl(77, 70%, 45%);
+	--clr-accent-light: hsl(77, 44%, 67%);
+	--clr-accent-dark: hsl(77, 44%, 17%);
 
 	--clr-extra: hsl(56, 100%, 47%);
 	--clr-extra-light: hsl(56, 70%, 77%);
 	--clr-extra-dark: hsl(56, 70%, 27%);
 
 	--clr-white: hsl(0, 100%, 100%);
-	--clr-neutral-100: hsl(163, 7%, 81%);
-	--clr-neutral-300: hsl(163, 7%, 61%);
-	--clr-neutral-500: hsl(163, 7%, 51%);
-	--clr-neutral-700: hsl(163, 7%, 31%);
-	--clr-neutral-900: hsl(163, 7%, 21%);
-	--clr-black: hsl(163, 7%, 10%);
+	--clr-neutral-100: hsl(0, 0, 93%);
+	--clr-neutral-200: hsl(0, 0, 83%);
+	--clr-neutral-300: hsl(0, 0, 63%);
+	--clr-neutral-500: hsl(0, 0, 53%);
+	--clr-neutral-700: hsl(0, 0, 33%);
+	--clr-neutral-900: hsl(0, 0, 20%);
+	--clr-black: hsl(0, 0, 10%);
 
 	--clr-secondary: var(--clr-neutral-300);
 	--clr-success: green;
@@ -73,12 +74,12 @@ h4 {
 
 @media (prefers-color-scheme: light) {
 	:root {
-		--text-color: var(--clr-black);
-		--background-color: var(--clr-neutral-100);
-		--link-color: var(--clr-accent);
-		--link-hover-color: var(--clr-accent-dark);
-		--link-hover-alt: var(--clr-white);
-		--clr-heading: var(--clr-accent);
+		--text-color: var(--clr-neutral-900);
+		--background-color: var(--clr-white);
+		--link-color: var(--clr-primary);
+		--link-hover-color: var(--clr-primary-light);
+		--link-hover-alt: var(--clr-black);
+		--clr-heading: var(--clr-primary);
 		--clr-contrast-bg: #000;
 		--clr-contrast-txt: #fff;
 		--clr-shadow: #{a.$trans-dark};

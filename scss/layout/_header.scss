@@ -1,9 +1,9 @@
 @use 'abstracts' as a;
 header {
 	position: sticky;
-	// position: relative;
 	top: 0;
 	isolation: isolate;
+	z-index: 1;
 }
 .pageheader {
 	display: flex;

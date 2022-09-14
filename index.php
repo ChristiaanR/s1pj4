@@ -68,33 +68,46 @@ $this->setMetaData('generator', '');
 
   <header id="header" class="pageheader container" data-size="default">
     <a href="#maincontent" class="skip-link">Skip to content</a>
-
-    <img class="logo" src="./images/logo-ROG.png" alt="">
+    <a href="/" class="logo">
+      <img src="<?php echo $this->baseurl ?>/images/logo_samen1plan.png" alt="<?php echo $sitename ?>" />
+    </a>
     <button type="button" id="navbutton" class="toggle btn btn-primary only-sm" data-toggle="collapse"
       data-target="#mainnav">Menu</button>
+
     <div id="mainnav" class="mainnav collapse" data-collapse="true">
-      <jdoc:include type="modules" name="menu" style="none" />
-      <jdoc:include type="modules" name="search" style="none" />
+      <jdoc:include type="modules" name="position-1" style="none" />
+      <!-- <jdoc:include type="modules" name="search" style="none" /> -->
     </div>
 
 
   </header>
+
+
   <div class="container extra">
     <jdoc:include type="modules" name="banner" style="none" />
     <jdoc:include type="modules" name="breadcrumbs" style="none" />
   </div>
   <main>
     <div class="container">
+
+      <jdoc:include type="modules" name="position-2" style="none" />
+      <jdoc:include type="modules" name="position-3" style="none" />
+      <jdoc:include type="modules" name="position-4" style="none" />
+      <jdoc:include type="modules" name="position-5" style="none" />
+      <jdoc:include type="modules" name="position-6" style="none" />
+      <jdoc:include type="modules" name="position-7" style="none" />
+      <jdoc:include type="modules" name="bottom1" style="none" />
+      <jdoc:include type="modules" name="left" style="none" />
+      <jdoc:include type="modules" name="lightbox" style="none" />
+
       <jdoc:include type="message" />
-      <jdoc:include type="modules" name="main-top" style="none" />
       <jdoc:include type="component" />
-      <jdoc:include type="modules" name="main-bottom" style="none" />
     </div>
   </main>
   <footer>
     <div class="container">
 
-      <jdoc:include type="modules" name="footer" style="none" />
+      <jdoc:include type="modules" name="footer" style="html5" />
     </div>
   </footer>
   <jdoc:include type="modules" name="debug" style="none" />

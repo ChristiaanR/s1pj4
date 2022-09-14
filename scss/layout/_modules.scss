@@ -1,0 +1,21 @@
+@use 'abstracts' as a;
+
+.mod-grid > div > ul {
+	// display: grid;
+	// grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+	align-items: center;
+	gap: 1rem;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.powered_by {
+	ul {
+		// background: lightcoral;
+		@include a.unstyled-list;
+	}
+	li {
+		flex: 0 2 7.5rem;
+	}
+}

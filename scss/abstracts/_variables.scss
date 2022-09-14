@@ -1,11 +1,10 @@
 // Paths - change for production: css will also be stored in media
-
-$img-path: '../../media/templates/j4test/img';
+$img-path: '../../media/templates/s1pj4/img';
 
 // Fonts
-$fnt-base: 'Raleway', serif;
-$fnt-head: 'Bitter', serif;
-$fnt-alt: 'Bitter', sans-serif;
+$fnt-base: 'Arial', 'Helvetica', sans-serif;
+$fnt-head: 'Arial', 'Helvetica', sans-serif;
+$fnt-alt: 'Georgia', sans-serif;
 $fnt-accent: Arial, sans-serif;
 
 $fs-h1: 3rem;
@@ -44,22 +43,15 @@ $tf-large: 0.5s ease;
 // utility-colors
 
 $utility-colors: (
-	'primary': hsl(193, 74%, 16%),
-	'secondary': hsl(0, 0%, 30%),
-	'success': hsl(120, 100%, 25%),
-	'info': hsl(180, 100%, 25%),
-	'warning': hsl(60, 100%, 50%),
-	'danger': hsl(0, 100%, 40%),
+	// colors from theme/default;
+	'primary': hsl(125, 66%, 35%),
+	'secondary': hsl(0, 0, 63%),
+	'success': green,
+	'info': teal,
+	'warning': yellow,
+	'danger': red,
 	'light': hsl(0, 0%, 90%),
-	'dark': hsl(0, 0%, 20%),
-	// 'primary': var(--clr-primary),
-	// 'secondary': var(--clr-secondary),
-	// 'success': var(--clr-success),
-	// 'info': var(--clr-info),
-	// 'warning': var(--clr-warning),
-	// 'danger': var(--clr-danger),
-	// 'light': var(--clr--light),
-	// 'dark': var(--clr-dark),,,,,,,,,,,,,,,
+	'dark': hsl(0, 0%, 20%)
 );
 
 $trans-dark: rgba(0, 0, 0, 0.25);

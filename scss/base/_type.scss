@@ -2,7 +2,7 @@
 
 body {
 	font-size: a.$fs-body;
-	line-height: a.$line-height;
+	line-height: a.$base-line-height;
 	font-family: a.$fnt-base;
 	font-weight: 400;
 }
@@ -15,9 +15,10 @@ h5 {
 	margin-bottom: 0.5em;
 	margin-top: 1em;
 	font-family: a.$fnt-head;
+	line-height: a.$head-line-height;
 }
 h1:first-child {
-	margin-top: 0;
+	margin-top: 0.2em;
 }
 p,
 figure,

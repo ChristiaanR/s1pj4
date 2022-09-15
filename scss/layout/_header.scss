@@ -4,27 +4,37 @@ header {
 	top: 0;
 	isolation: isolate;
 	z-index: 1;
+	margin-bottom: 1rem;
 }
 .pageheader {
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
+	flex-wrap: wrap;
 	.toggle {
 		margin-top: 1rem;
 	}
 }
-
-.mainnav {
-	display: flex;
-	padding: 2rem 1rem;
+[data-size='small'] {
+	.mainnav {
+		padding: 0.5rem 1rem;
+	}
 }
+
 .logo {
 	max-height: 200px;
 	transition: all 0.3s ease;
 	[data-size='small'] & {
 		max-height: 65px;
+		img {
+			max-height: 65px;
+			width: auto;
+		}
+		.mainnav {
+			padding: 1rem;
+		}
 	}
-	@include a.bp(small) {
-		max-height: 65px;
-	}
+	// @include a.bp(small) {
+	// 	max-height: 65px;
+	// }
 }

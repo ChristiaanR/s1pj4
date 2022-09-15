@@ -1,5 +1,5 @@
 @use 'abstracts' as a;
 
 input {
-	padding: calc(a.$line-height * 0.25) 1em;
+	padding: calc(a.$base-line-height * 0.25) 1em;
 }

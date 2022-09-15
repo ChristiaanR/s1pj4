@@ -4,3 +4,17 @@
 	max-width: 90%;
 	margin: 0 auto;
 }
+
+.grid-columns {
+	display: grid;
+	gap: 2rem;
+}
+
+.over {
+	.grid-columns {
+		grid-template-columns: 2fr 4fr;
+	}
+	.item-page {
+		grid-column: 2 / -1;
+	}
+}

@@ -21,46 +21,48 @@
 nav,
 .nav {
 	@include a.unstyled-list;
-	font-family: a.$fnt-alt;
+	margin-block: 0;
 }
 
 .mainnav {
-	// position: fixed;
-	position: absolute;
-	top: 100%;
-	right: 0;
-	left: 0;
-	max-width: 100%;
 	transition: all 0.3s ease-in-out;
-	transform-origin: top;
 	z-index: 1;
+	line-height: 1;
+	width: 100%;
+	overflow: hidden;
 	@include a.bp(medium) {
 		position: static;
+		padding: 2rem 1rem;
 	}
-	&[data-collapse='true'] {
-		// transform: translateX(100%);
-		opacity: 0;
-		transform: none;
-		display: none;
-		@include a.bp(medium) {
-			opacity: 1;
-			display: block;
+
+	@each $items, $value in a.$menu-length {
+		&[data-count='#{$items}'] {
+			height: calc(2em * $value);
 		}
 	}
-	&[data-collapse='false'] {
-		// transform: translateX(0);
-		opacity: 1;
-		display: block;
+
+	&[data-collapse='true'] {
+		height: 0;
 	}
 }
-
 .mainnav .nav {
 	display: flex;
 	flex-direction: column;
+	@include a.bp(medium) {
+		flex-direction: row;
+		gap: 1em;
+	}
+	@include a.bp(max-medium) {
+		a {
+		}
+	}
 }
 
 .mainnav a {
 	display: block;
+	padding: 0.5em;
+	text-decoration: none;
+	text-transform: capitalize;
 }
 
 .pagenavigation .pagination {

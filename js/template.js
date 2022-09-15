@@ -20,6 +20,7 @@ function resizeLogo() {
 	}
 }
 
+// create menu toggle
 // let the DOM load so the elements exist
 window.addEventListener('DOMContentLoaded', (event) => {
 	const toggleMenu = document.querySelector('#navbutton');
@@ -32,4 +33,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
 			menu.setAttribute('data-collapse', 'false');
 		}
 	});
+});
+
+// count menu items to give know the height of the nav when stacked
+window.addEventListener('DOMContentLoaded', (event) => {
+	const mainMenu = document.querySelector('#hoofdmenu');
+	const navItems = mainMenu.childElementCount;
+	// mainMenu.setAttribute('data-count', navItems);
+	document.querySelector('#mainnav').setAttribute('data-count', navItems);
 });

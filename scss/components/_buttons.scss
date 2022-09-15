@@ -6,7 +6,7 @@ button,
 	cursor: pointer;
 	font-size: a.$fs-small;
 	border-radius: a.$space-fixed-small;
-	padding: calc(a.$line-height * 0.25) 1em;
+	padding: calc(a.$base-line-height * 0.25) 1em;
 	border-width: 1px;
 	border-style: solid;
 }

@@ -4,6 +4,11 @@
 		@media (min-width: 25rem) {
 			@content;
 		}
+	} @else if $point == max-medium {
+		//816px
+		@media (max-width: calc(51rem - 1px)) {
+			@content;
+		}
 	} @else if $point == medium {
 		//816px
 		@media (min-width: 51rem) {

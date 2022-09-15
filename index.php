@@ -25,6 +25,7 @@ $itemid   = $app->input->getCmd('Itemid', '');
 
 $sitename = htmlspecialchars($app->get('sitename'), ENT_QUOTES, 'UTF-8');
 $menu     = $app->getMenu()->getActive();
+$alias    = $menu->alias;
 $pageclass = $menu !== null ? $menu->getParams()->get('pageclass_sfx', '') : '';
 
 $wa->usePreset('template.s1pj4');
@@ -48,9 +49,7 @@ $this->setMetaData('generator', '');
   <!-- Google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 </head>
 
 <body class="site 
@@ -63,7 +62,7 @@ $this->setMetaData('generator', '');
   ?>">
 
   <?php if ($this->params->get('siteDescription')) : ?>
-  <div><?php echo htmlspecialchars($this->params->get('siteDescription')); ?></div>
+    <div><?php echo htmlspecialchars($this->params->get('siteDescription')); ?></div>
   <?php endif; ?>
 
   <header id="header" class="pageheader container" data-size="default">
@@ -71,25 +70,26 @@ $this->setMetaData('generator', '');
     <a href="/" class="logo">
       <img src="<?php echo $this->baseurl ?>/images/logo_samen1plan.png" alt="<?php echo $sitename ?>" />
     </a>
-    <button type="button" id="navbutton" class="toggle btn btn-primary only-sm" data-toggle="collapse"
-      data-target="#mainnav">Menu</button>
+    <button type="button" id="navbutton" class="toggle btn btn-primary only-sm" data-toggle="collapse" data-target="#mainnav">Menu</button>
 
     <div id="mainnav" class="mainnav collapse" data-collapse="true">
       <jdoc:include type="modules" name="position-1" style="none" />
       <!-- <jdoc:include type="modules" name="search" style="none" /> -->
     </div>
 
-
   </header>
 
-
-  <div class="container extra">
+  <!-- <div class="container extra">
     <jdoc:include type="modules" name="banner" style="none" />
     <jdoc:include type="modules" name="breadcrumbs" style="none" />
-  </div>
-  <main>
-    <div class="container">
+  </div> -->
+  <?php // add menu-alias as class on main 
+  ?>
+  <main class="<?php echo ($alias); ?>">
+    <jdoc:include type="message" />
+    <div class="container grid-columns">
 
+      <jdoc:include type="component" />
       <jdoc:include type="modules" name="position-2" style="none" />
       <jdoc:include type="modules" name="position-3" style="none" />
       <jdoc:include type="modules" name="position-4" style="none" />
@@ -100,8 +100,6 @@ $this->setMetaData('generator', '');
       <jdoc:include type="modules" name="left" style="none" />
       <jdoc:include type="modules" name="lightbox" style="none" />
 
-      <jdoc:include type="message" />
-      <jdoc:include type="component" />
     </div>
   </main>
   <footer>
@@ -111,7 +109,6 @@ $this->setMetaData('generator', '');
     </div>
   </footer>
   <jdoc:include type="modules" name="debug" style="none" />
-
 
 </body>
 

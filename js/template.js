@@ -13,7 +13,7 @@ window.onscroll = function () {
 };
 
 function resizeLogo() {
-	if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+	if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
 		document.querySelector('#header').setAttribute('data-size', 'small');
 	} else {
 		document.querySelector('#header').setAttribute('data-size', 'default');
@@ -28,9 +28,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 	toggleMenu.addEventListener('click', function () {
 		if (menu.getAttribute('data-collapse') == 'false') {
-			menu.setAttribute('data-collapse', 'true');
+			menu.setAttribute('data-collapse', 'true'), toggleMenu.setAttribute('data-open', 'false');
 		} else {
-			menu.setAttribute('data-collapse', 'false');
+			menu.setAttribute('data-collapse', 'false'), toggleMenu.setAttribute('data-open', 'true');
 		}
 	});
 });

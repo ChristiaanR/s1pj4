@@ -2,6 +2,7 @@
 
 .article-info {
 	font-size: a.$fs-small;
+
 	dd {
 		margin-bottom: 0;
 	}
@@ -12,14 +13,17 @@
 }
 
 .newsflash {
-	display: flex;
-	justify-content: space-around;
-	justify-items: center;
-	flex-wrap: wrap;
-	gap: 1rem;
-	> div {
-		flex: 1 0 12rem;
-		background-color: #eee;
-		max-width: 50%;
+
+	@include a.bp(medium) {
+		display: flex;
+		justify-content: space-around;
+		justify-items: center;
+		flex-wrap: wrap;
+		gap: 1rem;
+
+		>div {
+			flex: 1 0 12rem;
+			max-width: 50%;
+		}
 	}
 }

@@ -12,6 +12,7 @@
 	transition: cubic-bezier(0.23, 1, 0.32, 1) all 0.3s;
 	transform: translateY(-110%);
 	border-radius: 0 0 0.5rem 0.5rem;
+
 	&:focus,
 	&:focus-within {
 		transform: translateY(0);
@@ -24,18 +25,36 @@ nav,
 	margin-block: 0;
 }
 
+.toggle::after {
+	transition: all .3s ease;
+}
+
+.toggle::after,
+.toggle[data-open='false']::after {
+	transform: rotate(0);
+	// background: red;
+}
+
+.toggle[data-open='true']::after {
+	transform: rotate(180deg);
+
+}
+
 .mainnav {
 	transition: all 0.3s ease-in-out;
 	z-index: 1;
 	line-height: 1;
 	width: 100%;
 	overflow: hidden;
+
+
 	@include a.bp(medium) {
 		position: static;
 		padding: 2rem 1rem;
 	}
 
-	@each $items, $value in a.$menu-length {
+	@each $items,
+	$value in a.$menu-length {
 		&[data-count='#{$items}'] {
 			height: calc(2em * $value);
 		}
@@ -45,16 +64,18 @@ nav,
 		height: 0;
 	}
 }
+
 .mainnav .nav {
 	display: flex;
 	flex-direction: column;
+
 	@include a.bp(medium) {
 		flex-direction: row;
 		gap: 1em;
 	}
+
 	@include a.bp(max-medium) {
-		a {
-		}
+		a {}
 	}
 }
 

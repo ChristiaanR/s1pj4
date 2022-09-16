@@ -17,9 +17,11 @@ h5 {
 	font-family: a.$fnt-head;
 	line-height: a.$head-line-height;
 }
+
 h1:first-child {
 	margin-top: 0.2em;
 }
+
 p,
 figure,
 blockquote,
@@ -27,35 +29,43 @@ dl,
 dd {
 	margin-bottom: a.$space-relative-small;
 }
+
 h1,
 .display-1 {
 	font-size: a.$fs-h1;
 	font-weight: 500;
 	letter-spacing: -0.03em;
 }
+
 h2,
 .display-2 {
 	font-size: a.$fs-h2;
 	font-weight: 600;
 }
+
 h3,
 .display-3 {
 	font-size: a.$fs-h3;
 }
+
 h4,
 .display-4 {
 	font-size: a.$fs-h4;
 }
+
 h5 {
 	font-size: a.$fs-h5;
 }
+
 small,
 .small {
 	font-size: a.$fs-small;
 }
+
 .tiny {
 	font-size: a.$fs-min;
 }
+
 .lead {
 	font-size: a.$fs-h4;
 	font-family: a.$fnt-alt;
@@ -68,6 +78,7 @@ a.btn {
 }
 
 a {
+
 	&:hover,
 	&:active {
 		text-decoration: none;
@@ -77,8 +88,9 @@ a {
 
 .btn,
 button {
-	font-family: a.$fnt-alt;
+	font-family: a.$fnt-base;
 }
+
 .breadcrumb {
 	font-size: a.$fs-small;
 }

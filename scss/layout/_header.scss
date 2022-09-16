@@ -1,39 +1,50 @@
 @use 'abstracts' as a;
-header {
+
+.pageheader {
 	position: sticky;
 	top: 0;
 	isolation: isolate;
 	z-index: 1;
 	margin-bottom: 1rem;
-}
-.pageheader {
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-start;
-	flex-wrap: wrap;
+	text-align: center;
+
 	.toggle {
-		margin-top: 1rem;
-	}
-}
-[data-size='small'] {
-	.mainnav {
-		padding: 0.5rem 1rem;
+		//	margin-top: 1rem;
+		display: block;
+		width: 100%;
+
+		&::after {
+			content: '';
+			display: inline-block;
+			margin-left: 1ch;
+			border-style: solid;
+			border-width: 1ch 1ch 0 1ch;
+			border-color: currentColor transparent transparent transparent;
+		}
 	}
 }
 
 .logo {
-	max-height: 200px;
-	transition: all 0.3s ease;
+	display: block;
+	margin: 0 auto;
+	width: 210px;
+	aspect-ratio: 42 / 23;
+	transition: all .5s ease;
+
+	img {
+		object-fit: contain;
+	}
+
 	[data-size='small'] & {
-		max-height: 65px;
-		img {
-			max-height: 65px;
-			width: auto;
-		}
+		width: 110px;
+
+		img {}
+
 		.mainnav {
 			padding: 1rem;
 		}
 	}
+
 	// @include a.bp(small) {
 	// 	max-height: 65px;
 	// }

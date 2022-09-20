@@ -5,6 +5,10 @@ ul {
 	padding-inline-start: 3ch;
 }
 
+.unstyled-list {
+	@include a.unstyled-list;
+}
+
 .list-inline {
 	@include a.unstyled-list;
 	display: flex;

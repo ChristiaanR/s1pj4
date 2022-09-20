@@ -1,3 +1,5 @@
+@use 'vendors/fontawesome';
+
 @use 'theme/default';
 @use 'theme/utility-colors';
 
@@ -20,5 +22,7 @@
 @use 'layout/header';
 @use 'layout/modules';
 @use 'layout/responsive';
+
+@use 'pages/home';
 
 @use 'dev';

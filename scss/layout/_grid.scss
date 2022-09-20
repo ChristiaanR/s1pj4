@@ -10,11 +10,26 @@
 	gap: 2rem;
 }
 
-.over {
+@include a.bp(medium) {
 	.grid-columns {
-		grid-template-columns: 2fr 4fr;
+		grid-template-columns: repeat(2, 1fr);
 	}
-	.item-page {
+
+	.main-column {
 		grid-column: 2 / -1;
+		grid-row: 1 / -1;
+	}
+
+	.grid-full-width {
+		grid-column: 1 / -1;
 	}
 }
+
+// .over {
+// 	.grid-columns {
+// 		grid-template-columns: 2fr 4fr;
+// 	}
+// 	.item-page {
+// 		grid-column: 2 / -1;
+// 	}
+// }

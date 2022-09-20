@@ -49,7 +49,9 @@ $this->setMetaData('generator', '');
   <!-- Google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
 </head>
 
 <body class="site 
@@ -62,7 +64,7 @@ $this->setMetaData('generator', '');
   ?>">
 
   <?php if ($this->params->get('siteDescription')) : ?>
-    <div><?php echo htmlspecialchars($this->params->get('siteDescription')); ?></div>
+  <div><?php echo htmlspecialchars($this->params->get('siteDescription')); ?></div>
   <?php endif; ?>
 
   <header id="header" class="pageheader container" data-size="default">
@@ -70,7 +72,8 @@ $this->setMetaData('generator', '');
     <a href="/" class="logo">
       <img src="<?php echo $this->baseurl ?>/images/logo_samen1plan.png" alt="<?php echo $sitename ?>" />
     </a>
-    <button type="button" id="navbutton" class="toggle btn btn-primary only-sm" data-toggle="collapse" data-target="#mainnav">Menu</button>
+    <button type="button" id="navbutton" class="toggle btn btn-primary only-sm" data-toggle="collapse"
+      data-target="#mainnav">Menu</button>
 
     <div id="mainnav" class="mainnav collapse" data-collapse="true">
       <jdoc:include type="modules" name="position-1" style="none" />
@@ -88,17 +91,25 @@ $this->setMetaData('generator', '');
   <main class="<?php echo ($alias); ?>">
     <jdoc:include type="message" />
     <div class="container grid-columns">
-
-      <jdoc:include type="component" />
+      <div class="grid-column main-column">
+        <jdoc:include type="component" />
+        <jdoc:include type="modules" name="position-4" style="html5" />
+      </div>
       <jdoc:include type="modules" name="position-2" style="none" />
       <jdoc:include type="modules" name="position-3" style="none" />
-      <jdoc:include type="modules" name="position-4" style="none" />
-      <jdoc:include type="modules" name="position-5" style="none" />
-      <jdoc:include type="modules" name="position-6" style="none" />
-      <jdoc:include type="modules" name="position-7" style="none" />
-      <jdoc:include type="modules" name="bottom1" style="none" />
-      <jdoc:include type="modules" name="left" style="none" />
-      <jdoc:include type="modules" name="lightbox" style="none" />
+      <?php if ($this->countModules('position-5')) : ?>
+      <div class="sidebar grid-column">
+        <jdoc:include type="modules" name="position-5" style="html5" />
+      </div>
+      <?php endif; ?>
+      <jdoc:include type="modules" name="position-6" style="html5" />
+      <?php if ($this->countModules('position-7')) : ?>
+      <div class="items-below grid-full-width">
+        <jdoc:include type="modules" name="position-7" style="html5" />
+      </div>
+      <?php endif; ?>
+      <jdoc:include type="modules" name="bottom1" style="html5" />
+      <jdoc:include type="modules" name="lightbox" style="html5" />
 
     </div>
   </main>

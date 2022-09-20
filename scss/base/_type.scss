@@ -1,10 +1,14 @@
 @use 'abstracts' as a;
 
-body {
+:root {
+	//setting new root font size so every 'rem' is based on this new size
 	font-size: a.$fs-body;
+}
+
+body {
 	line-height: a.$base-line-height;
 	font-family: a.$fnt-base;
-	font-weight: 400;
+	font-weight: a.$fnt-base-weight;
 }
 
 h1,
@@ -15,16 +19,21 @@ h5 {
 	margin-bottom: 0.5em;
 	margin-top: 1em;
 	font-family: a.$fnt-head;
+	font-weight: a.$fnt-head-weight;
 	line-height: a.$head-line-height;
+
+	&:first-child {
+		margin-top: 0;
+	}
 }
 
 h1:first-child {
 	margin-top: 0.2em;
 }
 
+
 p,
 figure,
-blockquote,
 dl,
 dd {
 	margin-bottom: a.$space-relative-small;
@@ -33,14 +42,16 @@ dd {
 h1,
 .display-1 {
 	font-size: a.$fs-h1;
-	font-weight: 500;
 	letter-spacing: -0.03em;
+}
+
+.page-header h1 {
+	font-size: a.$fs-h2;
 }
 
 h2,
 .display-2 {
 	font-size: a.$fs-h2;
-	font-weight: 600;
 }
 
 h3,
@@ -71,6 +82,18 @@ small,
 	font-family: a.$fnt-alt;
 }
 
+.quote {
+	font-family: a.$fnt-alt;
+	text-align: right;
+}
+
+blockquote {
+	font-weight: a.$fnt-head-weight;
+	font-style: italic;
+	font-size: a.$fs-h2;
+	margin-bottom: .25em;
+}
+
 // Links
 
 a.btn {
@@ -78,11 +101,12 @@ a.btn {
 }
 
 a {
+	transition: all a.$tf-base;
 
 	&:hover,
 	&:active {
-		text-decoration: none;
-		transition: all a.$tf-base;
+		// makes a nicer transition than text-decoration: none;
+		text-decoration-color: transparent;
 	}
 }
 
@@ -93,4 +117,18 @@ button {
 
 .breadcrumb {
 	font-size: a.$fs-small;
+}
+
+@font-face {
+	font-family: 'Droid Sans';
+	src: url('../fonts/DroidSans-webfont.woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Droid Sans';
+	src: url('../fonts/DroidSans-Bold-webfont.woff');
+	font-weight: 700;
+	font-style: normal;
 }

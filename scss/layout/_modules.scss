@@ -1,6 +1,6 @@
 @use 'abstracts' as a;
 
-.mod-grid > div > ul {
+.mod-grid>div>ul {
 	// display: grid;
 	// grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
 	align-items: center;
@@ -15,7 +15,73 @@
 		// background: lightcoral;
 		@include a.unstyled-list;
 	}
+
 	li {
 		flex: 0 2 7.5rem;
+	}
+}
+
+.category-module {
+	flex-wrap: wrap;
+	justify-items: space-between;
+
+	li {
+		@include a.br(small);
+		padding: .5rem;
+		flex: 1 1 18rem;
+	}
+
+	a:link {
+		display: block;
+		text-decoration: none;
+		font-weight: 700;
+		margin-bottom: .875em;
+	}
+}
+
+.quote {
+	margin: 2rem 0 3rem;
+}
+
+.faq {
+	position: relative;
+
+	.icon {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		width: 10em;
+		height: 4em;
+		z-index: 15;
+	}
+}
+
+.mod-articlesnews {
+	&__item {
+		@include a.br(small);
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+		margin-bottom: 1rem;
+		padding: 1rem;
+		border-width: 1px;
+		border-style: solid;
+		grid-auto-flow: dense;
+	}
+
+	.newsflash-title {
+		grid-column: 1 / -1;
+		text-align: right;
+	}
+
+	.newsflash-image {
+		grid-column: 2;
+	}
+
+	p {
+		grid-column: 1;
+	}
+
+	figure {
+		margin-bottom: 0;
 	}
 }

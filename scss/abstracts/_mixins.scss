@@ -1,20 +1,30 @@
 @mixin bp($point) {
-	@if $point == small {
+	@if $point ==small {
+
 		//400px
 		@media (min-width: 25rem) {
 			@content;
 		}
-	} @else if $point == max-medium {
-		//816px
+	}
+
+	@else if $point ==mobile {
+
+		//815px
 		@media (max-width: calc(51rem - 1px)) {
 			@content;
 		}
-	} @else if $point == medium {
+	}
+
+	@else if $point ==medium {
+
 		//816px
 		@media (min-width: 51rem) {
 			@content;
 		}
-	} @else if $point == large {
+	}
+
+	@else if $point ==large {
+
 		//1200px
 		@media (min-width: 75rem) {
 			@content;
@@ -26,4 +36,23 @@
 	list-style: none;
 	margin-left: 0;
 	padding-left: 0;
+}
+
+@mixin bg($color) {
+	//define these theme colors in theme/default
+	background-color: var(--bg-#{$color});
+}
+
+@mixin br($size) {
+	@if $size ==small {
+		border-radius: .5rem;
+	}
+
+	@if $size ==medium {
+		border-radius: 1rem;
+	}
+
+	@if $size ==large {
+		border-radius: 2rem;
+	}
 }

@@ -50,18 +50,25 @@ nav,
 
 	@include a.bp(medium) {
 		position: static;
-		padding: 2rem 1rem;
+		border-bottom: 3px solid var(--clr-primary);
+		// padding: 2rem 1rem;
 	}
 
 	@each $items,
 	$value in a.$menu-length {
 		&[data-count='#{$items}'] {
-			height: calc(2em * $value);
+			height: auto;
+
+			@include a.bp(mobile) {
+				height: calc(2.75em * $value);
+			}
 		}
 	}
 
 	&[data-collapse='true'] {
-		height: 0;
+		@include a.bp(mobile) {
+			height: 0;
+		}
 	}
 }
 
@@ -71,7 +78,7 @@ nav,
 
 	@include a.bp(medium) {
 		flex-direction: row;
-		gap: 1em;
+		gap: .5em;
 	}
 
 	@include a.bp(max-medium) {
@@ -81,9 +88,13 @@ nav,
 
 .mainnav a {
 	display: block;
-	padding: 0.5em;
+	padding: .75em 1em;
 	text-decoration: none;
-	text-transform: capitalize;
+	text-transform: lowercase;
+	font-weight: 700;
+	border: 2px solid var(--clr-neutral-200);
+	border-width: 2px 2px 0 2px;
+	border-radius: .5rem .5rem 0 0;
 }
 
 .pagenavigation .pagination {

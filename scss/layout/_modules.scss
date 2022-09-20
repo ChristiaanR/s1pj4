@@ -56,6 +56,15 @@
 	}
 }
 
+.sidebar {
+
+	h2,
+	h3,
+	h4 {
+		text-align: right;
+	}
+}
+
 .mod-articlesnews {
 	&__item {
 		@include a.br(small);

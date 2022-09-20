@@ -89,7 +89,10 @@ $isUnpublished = ($this->item->state == ContentComponent::CONDITION_UNPUBLISHED 
                 $link->setVar('return', base64_encode(RouteHelper::getArticleRoute($this->item->slug, $this->item->catid, $this->item->language)));
             endif; ?>
 
-    <?php echo LayoutHelper::render('joomla.content.readmore', array('item' => $this->item, 'params' => $params, 'link' => $link)); ?>
+    <?php
+            /* change link to local override */
+            /* echo LayoutHelper::render('joomla.content.readmore', array('item' => $this->item, 'params' => $params, 'link' => $link)); ?>*/
+    echo LayoutHelper::render('readmore', array('item' => $this->item, 'params' => $params, 'link' => $link)); ?>
 
     <?php endif; ?>
 

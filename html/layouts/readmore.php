@@ -21,30 +21,34 @@ $direction = Factory::getLanguage()->isRtl() ? 'left' : 'right';
 
 <p class="readmore">
   <?php if (!$params->get('access-view')) : ?>
-  <a class="link link-secondary" href="<?php echo $displayData['link']; ?>"
+  <a class="link link-primary" href="<?php echo $displayData['link']; ?>"
     aria-label="<?php echo Text::_('JGLOBAL_REGISTER_TO_READ_MORE') . ' ' . $this->escape($item->title); ?>">
-    <?php echo '<span class="icon-chevron-' . $direction . '" aria-hidden="true"></span>'; ?>
+    <?php //echo '<span class="icon-chevron-' . $direction . '" aria-hidden="true"></span>'; 
+            ?>
     <?php echo Text::_('JGLOBAL_REGISTER_TO_READ_MORE'); ?>
   </a>
   <?php elseif ($readmore = $item->alternative_readmore) : ?>
-  <a class="link link-secondary" href="<?php echo $displayData['link']; ?>"
+  <a class="link link-primary" href="<?php echo $displayData['link']; ?>"
     aria-label="<?php echo $this->escape($readmore . ' ' . $item->title); ?>">
-    <?php echo '<span class="icon-chevron-' . $direction . '" aria-hidden="true"></span>'; ?>
+    <?php //echo '<span class="icon-chevron-' . $direction . '" aria-hidden="true"></span>'; 
+            ?>
     <?php echo $readmore; ?>
     <?php if ($params->get('show_readmore_title', 0) != 0) : ?>
     <?php echo HTMLHelper::_('string.truncate', $item->title, $params->get('readmore_limit')); ?>
     <?php endif; ?>
   </a>
   <?php elseif ($params->get('show_readmore_title', 0) == 0) : ?>
-  <a class="link link-secondary" href="<?php echo $displayData['link']; ?>"
+  <a class="link link-primary" href="<?php echo $displayData['link']; ?>"
     aria-label="<?php echo Text::sprintf('JGLOBAL_READ_MORE_TITLE', $this->escape($item->title)); ?>">
-    <?php echo '<span class="icon-chevron-' . $direction . '" aria-hidden="true"></span>'; ?>
+    <?php //echo '<span class="icon-chevron-' . $direction . '" aria-hidden="true"></span>'; 
+            ?>
     <?php echo Text::_('JGLOBAL_READ_MORE'); ?>
   </a>
   <?php else : ?>
-  <a class="link link-secondary" href="<?php echo $displayData['link']; ?>"
+  <a class="link link-primary" href="<?php echo $displayData['link']; ?>"
     aria-label="<?php echo Text::sprintf('JGLOBAL_READ_MORE_TITLE', $this->escape($item->title)); ?>">
-    <?php echo '<span class="icon-chevron-' . $direction . '" aria-hidden="true"></span>'; ?>
+    <?php //echo '<span class="icon-chevron-' . $direction . '" aria-hidden="true"></span>'; 
+            ?>
     <?php echo Text::sprintf('JGLOBAL_READ_MORE_TITLE', HTMLHelper::_('string.truncate', $item->title, $params->get('readmore_limit'))); ?>
   </a>
   <?php endif; ?>

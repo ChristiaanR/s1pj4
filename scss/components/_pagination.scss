@@ -1,0 +1,32 @@
+.pagination__wrapper {
+  .pagination {
+    display: flex;
+    justify-content: center;
+  }
+
+  .page-item {
+    margin-left: -1px;
+    border: 1px solid var(--clr-neutral-200);
+
+    &.active {
+      border-color: var(--clr-primary);
+      z-index: 100;
+    }
+
+    &:first-child {
+      border-radius: 5px 0 0 5px;
+    }
+
+    &:last-child {
+      border-radius: 0 5px 5px 0;
+    }
+
+
+  }
+
+  .page-link {
+    padding: .75em 1em;
+    text-decoration: none;
+    display: block;
+  }
+}

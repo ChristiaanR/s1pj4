@@ -10,7 +10,7 @@
 	@else if $point ==mobile {
 
 		//815px
-		@media (max-width: calc(51rem - 1px)) {
+		@media (max-width: calc(46rem - 1px)) {
 			@content;
 		}
 	}
@@ -18,15 +18,15 @@
 	@else if $point ==medium {
 
 		//816px
-		@media (min-width: 51rem) {
+		@media (min-width: 46rem) {
 			@content;
 		}
 	}
 
 	@else if $point ==large {
 
-		//1200px
-		@media (min-width: 75rem) {
+		//923px
+		@media (min-width: 58rem) {
 			@content;
 		}
 	}

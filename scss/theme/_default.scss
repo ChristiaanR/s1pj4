@@ -16,11 +16,11 @@
 	--clr-white: hsl(0, 100%, 100%);
 	--clr-neutral-100: hsl(0, 0%, 93%);
 	--clr-neutral-200: hsl(0, 0%, 83%);
-	--clr-neutral-300: hsl(0, 0, 63%);
-	--clr-neutral-500: hsl(0, 0, 53%);
-	--clr-neutral-700: hsl(0, 0, 33%);
-	--clr-neutral-900: hsl(0, 0, 20%);
-	--clr-black: hsl(0, 0, 10%);
+	--clr-neutral-300: hsl(0, 0%, 63%);
+	--clr-neutral-500: hsl(0, 0%, 53%);
+	--clr-neutral-700: hsl(0, 0%, 33%);
+	--clr-neutral-900: hsl(0, 0%, 20%);
+	--clr-black: hsl(0, 0%, 10%);
 
 	--clr-secondary: var(--clr-neutral-300);
 	--clr-success: green;
@@ -71,7 +71,7 @@ blockquote,
 	So, we give it a position: relative
 	*/
 	position: relative;
-	z-index: -1;
+	// z-index: -1;
 }
 
 .items-below .newsflash-title {

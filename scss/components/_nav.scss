@@ -96,10 +96,20 @@ nav>ul {
 	border: 1px solid var(--clr-neutral-200);
 	border-radius: .5rem;
 
+	&:hover {
+		background-color: var(--bg-neutral);
+	}
+
 	@include a.bp(medium) {
 		border-width: 2px 2px 0 2px;
 		border-radius: .5rem .5rem 0 0;
 	}
+}
+
+.mainnav .current a {
+	background-color: var(--link-color);
+	color: white;
+	border-color: var(--link-color);
 }
 
 .pagenavigation .pagination {

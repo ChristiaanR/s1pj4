@@ -6111,6 +6111,7 @@ readers do not read off random characters that represent icons */
 	--clr-neutral-200: hsl(0, 0%, 83%);
 	--clr-neutral-300: hsl(0, 0%, 63%);
 	--clr-neutral-500: hsl(0, 0%, 53%);
+	--clr-neutral-600: hsl(0, 0%, 40%);
 	--clr-neutral-700: hsl(0, 0%, 33%);
 	--clr-neutral-900: hsl(0, 0%, 20%);
 	--clr-black: hsl(0, 0%, 10%);
@@ -6172,8 +6173,11 @@ blockquote,
 	border-color: var(--bg-neutral);
 }
 
-footer {
+footer .container {
 	background-color: var(--bg-neutral);
+}
+footer h3 {
+	color: var(--clr-txt-footer);
 }
 
 [role=tooltip] {
@@ -6194,6 +6198,7 @@ footer {
 		--clr-contrast-bg: #000;
 		--clr-contrast-txt: #fff;
 		--clr-shadow: rgba(0, 0, 0, 0.25);
+		--clr-txt-footer: var(--clr-neutral-600);
 		--bg-neutral: var(--clr-neutral-100);
 		--bg-primary: var(--clr-primary-light);
 	}
@@ -6717,11 +6722,20 @@ nav > ul {
 	border: 1px solid var(--clr-neutral-200);
 	border-radius: 0.5rem;
 }
+.mainnav a:hover {
+	background-color: var(--bg-neutral);
+}
 @media (min-width: 46rem) {
 	.mainnav a {
 		border-width: 2px 2px 0 2px;
 		border-radius: 0.5rem 0.5rem 0 0;
 	}
+}
+
+.mainnav .current a {
+	background-color: var(--link-color);
+	color: white;
+	border-color: var(--link-color);
 }
 
 .pagenavigation .pagination {
@@ -6796,7 +6810,7 @@ input {
 }
 
 .readmore {
-	margin: 1.6em auto;
+	margin: 1.6em auto 0 auto;
 }
 
 @media (min-width: 25rem) {
@@ -6885,6 +6899,11 @@ input {
 	display: block;
 }
 
+html,
+body {
+	min-height: 100vh;
+}
+
 .container {
 	margin: 0 auto;
 	max-width: 72.3rem;
@@ -6895,6 +6914,24 @@ main {
 	isolation: isolate;
 }
 
+body {
+	display: grid;
+	grid-template-rows: min-content 100% min-content;
+	align-items: stretch;
+}
+
+main {
+	align-self: stretch;
+}
+
+header {
+	align-self: start;
+}
+
+footer {
+	align-self: end;
+}
+
 .grid-columns {
 	display: grid;
 	gap: 2rem;
@@ -6903,6 +6940,9 @@ main {
 @media (min-width: 46rem) {
 	.grid-columns {
 		grid-template-columns: repeat(2, 1fr);
+	}
+	.nieuws .grid-columns, .veelgestelde-vragen .grid-columns {
+		grid-template-columns: 3fr 7fr;
 	}
 
 	.main-column {
@@ -6917,7 +6957,7 @@ main {
 .pageheader {
 	isolation: isolate;
 	z-index: 1;
-	margin-bottom: 1rem;
+	margin-bottom: 1.6rem;
 	text-align: center;
 }
 
@@ -6961,6 +7001,23 @@ main {
 		align-items: flex-end;
 	}
 }
+footer .container {
+	padding: 1.6rem;
+}
+footer h3 {
+	margin: 1.6em 0;
+	text-align: center;
+}
+footer a {
+	transition: all 0.3s ease;
+}
+footer a:link, footer a:visited {
+	opacity: 0.6;
+}
+footer a:hover, footer a:active {
+	opacity: 1;
+}
+
 .mod-grid > div > ul {
 	align-items: center;
 	gap: 1rem;
@@ -6979,13 +7036,24 @@ main {
 }
 
 .category-module {
-	flex-wrap: wrap;
-	justify-items: space-between;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 2rem;
+}
+@media (min-width: 46rem) {
+	.category-module {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+@media (min-width: 58rem) {
+	.category-module {
+		grid-template-columns: repeat(4, 1fr);
+	}
 }
 .category-module li {
 	border-radius: 0.5rem;
-	padding: 0.5rem;
-	flex: 1 1 18rem;
+	padding: 0.75vw;
+	flex: 1 1 17rem;
 }
 .category-module a:link {
 	display: block;
@@ -7000,14 +7068,24 @@ main {
 
 .faq {
 	position: relative;
+	isolation: isolate;
+	overflow: hidden;
 }
 .faq .icon {
 	position: absolute;
-	bottom: 0;
-	right: 0;
-	width: 10em;
-	height: 4em;
-	z-index: 15;
+	z-index: -1;
+	text-shadow: -1px -1px 2px rgba(255, 255, 255, 0.75);
+	color: #ddd;
+	font-size: 16rem;
+	top: 0;
+	right: -10%;
+}
+@media (min-width: 46rem) {
+	.faq .icon {
+		font-size: 14vw;
+		top: 20%;
+		right: -10%;
+	}
 }
 
 .sidebar h2,
@@ -7088,12 +7166,16 @@ main {
 	}
 }
 
+.body-home .pageheader {
+	margin-bottom: -1px;
+}
+
 .home .blog-item {
 	display: grid;
 	grid-template-columns: repeat(3 minmax(max-content, 1fr));
 	grid-template-rows: repeat(3, 1fr);
-	background-color: lime;
 	overflow: hidden;
+	padding: 0;
 }
 .home .blog-item figure {
 	grid-column: 1/-1;
@@ -7113,6 +7195,10 @@ main {
 }
 .home .blog-item .item-content {
 	background: green;
+}
+
+.home .main-column {
+	grid-column: 1/-1;
 }
 
 /* .pageheader {

@@ -1,10 +1,16 @@
+.body-home {
+  .pageheader {
+    margin-bottom: -1px;
+  }
+}
+
 .home {
   .blog-item {
     display: grid;
     grid-template-columns: repeat(3 minmax(max-content, 1fr));
     grid-template-rows: repeat(3, 1fr);
-    background-color: lime;
     overflow: hidden;
+    padding: 0;
 
     figure {
       grid-column: 1 / -1;
@@ -21,14 +27,19 @@
     img {
       width: 100%;
       height: 100%;
-      // height: 325px;
       object-fit: cover;
       aspect-ratio: 18 / 6.5;
-      // display: block;  
     }
 
     .item-content {
       background: green;
     }
   }
+}
+
+.home {
+  .main-column {
+    grid-column: 1 / -1;
+  }
+
 }

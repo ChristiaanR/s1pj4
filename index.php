@@ -60,7 +60,8 @@ $this->setMetaData('generator', '');
     . ($layout ? ' layout-' . $layout : ' no-layout')
     . ($task ? ' task-' . $task : ' no-task')
     . ($itemid ? ' itemid-' . $itemid : '')
-    . ($pageclass ? ' ' . $pageclass : '');
+    . ($pageclass ? ' ' . $pageclass : '')
+    . ' body-' . ($alias)
   ?>">
 
   <?php if ($this->params->get('siteDescription')) : ?>

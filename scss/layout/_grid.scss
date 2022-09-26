@@ -1,5 +1,23 @@
 @use 'abstracts' as a;
 
+body {
+	display: grid;
+	grid-template-rows: min-content 100% min-content;
+	align-items: stretch;
+}
+
+main {
+	align-self: stretch;
+}
+
+header {
+	align-self: start;
+}
+
+footer {
+	align-self: end;
+}
+
 .grid-columns {
 	display: grid;
 	gap: 2rem;
@@ -8,6 +26,11 @@
 @include a.bp(medium) {
 	.grid-columns {
 		grid-template-columns: repeat(2, 1fr);
+
+		.nieuws &,
+		.veelgestelde-vragen & {
+			grid-template-columns: 3fr 7fr;
+		}
 	}
 
 	.main-column {
@@ -19,6 +42,7 @@
 		grid-column: 1 / -1;
 	}
 }
+
 
 // .over {
 // 	.grid-columns {

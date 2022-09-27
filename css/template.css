@@ -6097,7 +6097,7 @@ readers do not read off random characters that represent icons */
 }
 
 :root {
-	--clr-primary: hsl(125, 66%, 35%);
+	--clr-primary: hsl(125, 66%, 32%);
 	--clr-primary-light: hsl(125, 25%, 85%);
 	--clr-primary-dark: hsl(125, 44%, 16%);
 	--clr-accent: hsl(77, 70%, 45%);
@@ -6897,6 +6897,24 @@ input {
 	padding: 0.75em 1em;
 	text-decoration: none;
 	display: block;
+}
+
+.accordion-header {
+	display: block;
+	font-size: 1.25rem;
+}
+
+dd[aria-hidden=true] {
+	height: 0;
+}
+
+dd[aria-hidden=false] {
+	height: 20rem;
+}
+
+.panel {
+	overflow: hidden;
+	transition: all 0.5s cubic-bezier(0.6, -0.28, 0.74, 0.05);
 }
 
 html,

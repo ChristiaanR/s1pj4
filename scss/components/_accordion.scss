@@ -1,0 +1,21 @@
+@use 'abstracts' as a;
+
+.accordion-header {
+  display: block;
+  font-size: a.$fs-h3;
+  ;
+}
+
+
+dd[aria-hidden="true"] {
+  height: 0;
+}
+
+dd[aria-hidden="false"] {
+  height: 20rem;
+}
+
+.panel {
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(.6, -0.28, .74, .05);
+}

@@ -28,8 +28,8 @@ $menu     = $app->getMenu()->getActive();
 $alias    = $menu->alias;
 $pageclass = $menu !== null ? $menu->getParams()->get('pageclass_sfx', '') : '';
 
-$wa->usePreset('template.s1pj4');
-$wa->useScript('template.s1pj4.js');
+// $wa->usePreset('template.s1pj4');
+// $wa->useScript('template.s1pj4.js');
 
 $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
 $this->setMetaData('color-scheme', 'light dark');
@@ -45,7 +45,6 @@ $this->setMetaData('generator', '');
   <jdoc:include type="styles" />
   <jdoc:include type="scripts" />
   <link rel="stylesheet" href="./templates/s1pj4/css/template.css">
-  <script src="./templates/s1pj4/js/template.js"></script>
   <!-- Google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -120,6 +119,7 @@ $this->setMetaData('generator', '');
       <jdoc:include type="modules" name="footer" style="html5" />
     </div>
   </footer>
+  <script src="./templates/s1pj4/js/template.js"></script>
   <jdoc:include type="modules" name="debug" style="none" />
 
 </body>

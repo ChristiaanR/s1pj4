@@ -1,21 +1,60 @@
 @use 'abstracts' as a;
 
+
 .accordion-header {
-  display: block;
-  font-size: a.$fs-h3;
-  ;
+  font-size: a.$fs-h4;
+  // color: var(--link-color);
+  text-align: left;
+  width: 100%;
+  position: relative;
+  background: var(--background-color);
+  border-width: 0 0 1px 0;
+  transition: background .3s ease;
+
+
+  &:hover {
+    background-color: var(--bg-neutral);
+  }
+
+  &:after {
+    --arrow-sizer: .75rem;
+    right: var(--arrow-sizer);
+    top: var(--arrow-sizer);
+    position: absolute;
+    content: '';
+    margin-right: auto;
+    display: inline-block;
+    margin-left: auto;
+    border-left: var(--arrow-sizer) solid transparent;
+    border-right: var(--arrow-sizer) solid transparent;
+    border-top: var(--arrow-sizer) solid var(--clr-neutral-300);
+    transition: transform .3s ease-in-out;
+    opacity: .7;
+  }
+
+  &[aria-expanded="true"]:after {
+    transform: rotate(180deg);
+  }
+
 }
 
 
 dd[aria-hidden="true"] {
-  height: 0;
+  max-height: 0;
+  padding-block: 0;
 }
 
 dd[aria-hidden="false"] {
-  height: 20rem;
+  max-height: 40rem;
+  padding-block: 1rem;
+}
+
+dd.panel {
+  margin-bottom: 0;
 }
 
 .panel {
   overflow: hidden;
-  transition: all 0.5s cubic-bezier(.6, -0.28, .74, .05);
+  padding-inline: 1rem;
+  transition: all 0.5s ease-in-out;
 }

@@ -1,3 +1,5 @@
+@use 'abstracts' as a;
+
 .body-home {
   .pageheader {
     margin-bottom: -1px;
@@ -5,12 +7,21 @@
 }
 
 .home {
+  .main-column {
+    grid-column: 1 / -1;
+  }
+
   .blog-item {
-    display: grid;
-    grid-template-columns: repeat(3 minmax(max-content, 1fr));
-    grid-template-rows: repeat(3, 1fr);
-    overflow: hidden;
     padding: 0;
+    margin: 0;
+    border-radius: 0 0 5px 5px;
+
+    @include a.bp(medium) {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+      overflow: hidden;
+    }
 
     figure {
       grid-column: 1 / -1;
@@ -19,9 +30,19 @@
     }
 
     .item-content {
-      grid-column: 1;
-      grid-row: 1;
-      width: 50ch;
+      padding: 2vw;
+      color: var(--clr-white);
+      background-color: var(--clr-primary-transparent);
+      box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+
+      @include a.bp(medium) {
+        grid-column: 1;
+        grid-row: 1;
+        margin: 2vw;
+        width: 50ch;
+        position: absolute;
+        border-radius: 5px;
+      }
     }
 
     img {
@@ -29,17 +50,56 @@
       height: 100%;
       object-fit: cover;
       aspect-ratio: 18 / 6.5;
+      border-bottom: 0;
     }
 
-    .item-content {
-      background: green;
+
+    .link-primary {
+      color: var(--clr-white);
+      text-shadow: 1px 1px black;
+    }
+
+    a:hover,
+    a:active {
+      color: var(--clr-accent);
+      text-decoration-color: var(--clr-accent);
+    }
+  }
+
+
+  .newsflash {
+    margin-bottom: 3rem;
+  }
+
+  .newsflash h4,
+  .newsflash p {
+    font-size: a.$fs-h2;
+    font-weight: 700;
+
+    a:link,
+    a:hover {
+      text-decoration: none;
     }
   }
 }
 
-.home {
-  .main-column {
-    grid-column: 1 / -1;
+.attention {
+  padding: .875rem;
+  position: relative;
+  background-image: linear-gradient(to right, rgb(149, 193, 34) 0%, rgb(149, 193, 34) 50%, rgba(149, 193, 34, 0) 100%);
+  text-align: center;
+  border-radius: 0 0 5px 5px;
+
+  @include a.bp(medium) {
+    transform: translateY(-100%);
+    margin-bottom: -4rem;
+  }
+
+  h2 {
+    font-size: 18px;
+    color: var(--clr-white);
+    line-height: 1.2em;
+    margin-bottom: 0;
   }
 
 }

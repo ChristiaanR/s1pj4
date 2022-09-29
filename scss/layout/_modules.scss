@@ -84,7 +84,7 @@
 	}
 }
 
-.mod-articlesnews {
+.grid-column .mod-articlesnews {
 	&__item {
 		@include a.br(small);
 		display: grid;

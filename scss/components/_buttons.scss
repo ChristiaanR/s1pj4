@@ -8,6 +8,7 @@ button,
 	padding: calc(a.$base-line-height * 0.25) 1em;
 	border-width: 1px;
 	border-style: solid;
+	border-color: var(--clr-neutral-100);
 }
 
 .input-password-toggle {}

@@ -42,11 +42,13 @@
 dd[aria-hidden="true"] {
   max-height: 0;
   padding-block: 0;
+  display: none;
 }
 
 dd[aria-hidden="false"] {
   max-height: 40rem;
   padding-block: 1rem;
+  display: block;
 }
 
 dd.panel {

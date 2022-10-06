@@ -37,11 +37,6 @@
       "uri": "system/searchtools/searchtools.min.css"
     },
     {
-      "name": "fontawesome",
-      "type": "style",
-      "uri": "system/joomla-fontawesome.min.css"
-    },
-    {
       "name": "template.s1pj4.js",
       "type": "script",
       "uri": "template.js",

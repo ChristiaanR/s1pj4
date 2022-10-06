@@ -2,7 +2,7 @@
 
 body {
 	display: grid;
-	grid-template-rows: min-content 100% min-content;
+	grid-template-rows: min-content auto min-content;
 	align-items: stretch;
 }
 

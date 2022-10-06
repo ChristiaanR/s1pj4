@@ -132,6 +132,7 @@ button {
 	src: url('../fonts/DroidSans-webfont.woff');
 	font-weight: 400;
 	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
@@ -139,4 +140,5 @@ button {
 	src: url('../fonts/DroidSans-Bold-webfont.woff');
 	font-weight: 700;
 	font-style: normal;
+	font-display: swap;
 }

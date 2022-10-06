@@ -28,8 +28,8 @@ $menu     = $app->getMenu()->getActive();
 $alias    = $menu->alias;
 $pageclass = $menu !== null ? $menu->getParams()->get('pageclass_sfx', '') : '';
 
-// $wa->usePreset('template.s1pj4');
-// $wa->useScript('template.s1pj4.js');
+$wa->usePreset('template.s1pj4');
+$wa->useScript('template.s1pj4.js');
 
 $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
 $this->setMetaData('color-scheme', 'light dark');
@@ -44,7 +44,7 @@ $this->setMetaData('generator', '');
   <jdoc:include type="metas" />
   <jdoc:include type="styles" />
   <jdoc:include type="scripts" />
-  <link rel="stylesheet" href="./templates/s1pj4/css/template.css">
+  <!-- <link rel="stylesheet" href="./templates/s1pj4/css/template.css"> -->
 
   <noscript>
     <link rel="stylesheet" href="./templates/s1pj4/css/noscript.css">
@@ -68,7 +68,8 @@ $this->setMetaData('generator', '');
   <header id="header" class="pageheader container" data-size="default">
     <a href="#maincontent" class="skip-link">Skip to content</a>
     <a href="/" class="logo">
-      <img src="<?php echo $this->baseurl ?>/images/logo_samen1plan.png" alt="<?php echo $sitename ?>" />
+      <img src="<?php echo $this->baseurl ?>/images/logo_samen1plan.png" width="210" height="115"
+        alt="<?php echo $sitename ?>" />
     </a>
     <button type="button" id="navbutton" class="toggle btn btn-primary only-sm" data-toggle="collapse"
       data-target="#mainnav">Menu</button>
@@ -117,7 +118,6 @@ $this->setMetaData('generator', '');
       <jdoc:include type="modules" name="footer" style="html5" />
     </div>
   </footer>
-  <script src="./templates/s1pj4/js/template.js"></script>
   <jdoc:include type="modules" name="debug" style="none" />
 
 </body>

@@ -6,7 +6,7 @@
  * @since       4.0.0
  */
 
-Joomla = window.Joomla || {};
+// Joomla = window.Joomla || {};
 
 // create menu toggle
 const toggleMenu = document.querySelector('#navbutton');
@@ -21,26 +21,13 @@ toggleMenu.addEventListener('click', function () {
 });
 
 // count menu items to give know the height of the nav when stacked
-window.addEventListener('DOMContentLoaded', (event) => {
-	const mainMenu = document.querySelector('#hoofdmenu');
-	const navItems = mainMenu.childElementCount;
-	// mainMenu.setAttribute('data-count', navItems);
-	document.querySelector('#mainnav').setAttribute('data-count', navItems);
+document.addEventListener('DOMContentLoaded', (event) => {
+	const mainMenu = document.getElementById('hoofdmenu');
+	let navItems = mainMenu.childElementCount;
+	mainMenu.setAttribute('data-count', navItems);
+	console.log(mainMenu);
+	//document.querySelector('#mainnav').setAttribute('data-count', navItems);
 });
-
-/* Create Accordion */
-// window.addEventListener('DOMContentLoaded', (event) => {
-// 	const trigger = document.querySelector('.accordionTrigger');
-
-// 	trigger.addEventListener('click', function () {
-// 		if (trigger.getAttribute('aria-expanded') == 'false') {
-// 			trigger.setAttribute('aria-expanded', 'true');
-// 		} else {
-// 			trigger.setAttribute('aria-expanded', 'false');
-// 		}
-// 	});
-// });
-//('use strict');
 
 class Accordion {
 	constructor(domNode) {

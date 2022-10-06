@@ -89,6 +89,10 @@ small,
 .quote {
 	font-family: a.$fnt-alt;
 	text-align: right;
+
+	p {
+		font-weight: 700;
+	}
 }
 
 blockquote {

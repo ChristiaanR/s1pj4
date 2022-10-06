@@ -45,12 +45,10 @@ $this->setMetaData('generator', '');
   <jdoc:include type="styles" />
   <jdoc:include type="scripts" />
   <link rel="stylesheet" href="./templates/s1pj4/css/template.css">
-  <!-- Google fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
-    rel="stylesheet">
+
+  <noscript>
+    <link rel="stylesheet" href="./templates/s1pj4/css/noscript.css">
+  </noscript>
 </head>
 
 <body class="site 

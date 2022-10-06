@@ -6503,6 +6503,9 @@ small,
 	font-family: "Droid Sans", "Arial", "Helvetica", sans-serif;
 	text-align: right;
 }
+.quote p {
+	font-weight: 700;
+}
 
 blockquote {
 	font-weight: 700;

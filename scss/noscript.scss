@@ -1,0 +1,15 @@
+/* 
+  Mainnav and accordions rely on javascript to open.
+  If javascript is disabled these styles will open these closed items.
+
+  */
+
+.mainnav[data-collapse="true"] {
+  height: auto;
+}
+
+dd[aria-hidden="true"] {
+  height: auto;
+  margin-bottom: 2rem;
+  max-height: unset;
+}

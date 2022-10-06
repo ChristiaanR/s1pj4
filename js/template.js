@@ -21,12 +21,12 @@ toggleMenu.addEventListener('click', function () {
 });
 
 // count menu items to give know the height of the nav when stacked
-// window.addEventListener('DOMContentLoaded', (event) => {
-const mainMenu = document.querySelector('#hoofdmenu');
-const navItems = mainMenu.childElementCount;
-// mainMenu.setAttribute('data-count', navItems);
-document.querySelector('#mainnav').setAttribute('data-count', navItems);
-// });
+window.addEventListener('DOMContentLoaded', (event) => {
+	const mainMenu = document.querySelector('#hoofdmenu');
+	const navItems = mainMenu.childElementCount;
+	// mainMenu.setAttribute('data-count', navItems);
+	document.querySelector('#mainnav').setAttribute('data-count', navItems);
+});
 
 /* Create Accordion */
 // window.addEventListener('DOMContentLoaded', (event) => {

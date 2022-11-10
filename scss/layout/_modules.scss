@@ -61,16 +61,15 @@
 		position: absolute;
 		z-index: -1;
 		text-shadow: -1px -1px 2px rgba(#fff, .75);
-		color: #ddd;
+		color: var(--clr-icon);
 		font-size: 16rem;
 		top: 0;
 		right: -10%;
 
 		@include a.bp(medium) {
-			font-size: 14vw;
-			top: 20%;
-			right: -10%;
-
+			font-size: 14rem;
+			top: 5%;
+			right: -5%;
 		}
 	}
 }
@@ -112,4 +111,8 @@
 	figure {
 		margin-bottom: 0;
 	}
+}
+
+.praktijk {
+	margin-top: 1.25rem;
 }

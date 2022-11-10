@@ -80,6 +80,7 @@ nav>ul {
 	@include a.bp(medium) {
 		flex-direction: row;
 		gap: .5em;
+		justify-content: flex-end;
 	}
 
 	@include a.bp(max-medium) {
@@ -108,7 +109,7 @@ nav>ul {
 
 .mainnav .active a {
 	background-color: var(--link-color);
-	color: white;
+	color: var(--active-menu-color);
 	border-color: var(--link-color);
 }
 

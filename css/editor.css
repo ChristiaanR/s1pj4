@@ -1,20 +1,174 @@
-@use 'abstracts' as a;
+ol,
+ul {
+	-webkit-padding-start: 3ch;
+	        padding-inline-start: 3ch;
+}
 
+.unstyled-list {
+	list-style: none;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+.list-inline {
+	list-style: none;
+	margin-left: 0;
+	padding-left: 0;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	gap: 0.8em;
+}
+
+:root {
+	font-size: 0.8125em;
+}
+
+body {
+	line-height: 1.6em;
+	font-family: "Arial", "Helvetica", sans-serif;
+	font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	margin-bottom: 0.5em;
+	margin-top: 1em;
+	font-family: "Droid Sans", "Arial", "Helvetica", sans-serif;
+	font-weight: 700;
+	line-height: 1.2em;
+}
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child {
+	margin-top: 0;
+}
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a {
+	text-decoration: none;
+}
+
+h1:first-child {
+	margin-top: 0.2em;
+}
+
+p,
+figure,
+dl,
+dd {
+	margin-bottom: 0.8em;
+	font-family: "Arial", "Helvetica", sans-serif;
+}
+
+h1,
+.display-1 {
+	font-size: 2rem;
+	letter-spacing: -0.03em;
+}
+
+h2,
+.display-2 {
+	font-size: 1.5rem;
+}
+
+h3,
+.display-3 {
+	font-size: 1.25rem;
+}
+
+h4,
+.display-4 {
+	font-size: 1.077rem;
+}
+
+h5 {
+	font-size: 1rem;
+}
+
+small,
+.small {
+	font-size: 0.8125rem;
+}
+
+.tiny {
+	font-size: 0.75rem;
+}
+
+.lead {
+	font-size: 1.077rem;
+	font-family: "Droid Sans", "Arial", "Helvetica", sans-serif;
+}
+
+.quote {
+	font-family: "Droid Sans", "Arial", "Helvetica", sans-serif;
+	text-align: right;
+}
+.quote p {
+	font-weight: 700;
+}
+
+blockquote {
+	font-weight: 700;
+	font-style: italic;
+	font-size: 1.5rem;
+	margin-bottom: 0.25em;
+}
+
+a.btn {
+	text-decoration: none;
+}
+
+a {
+	-webkit-transition: all 0.15s ease;
+	transition: all 0.15s ease;
+}
+a:hover, a:active {
+	-webkit-text-decoration-color: transparent;
+	        text-decoration-color: transparent;
+}
+
+.btn,
+button {
+	font-family: "Arial", "Helvetica", sans-serif;
+}
+
+.breadcrumb {
+	font-size: 0.8125rem;
+}
+
+@font-face {
+	font-family: "Droid Sans";
+	src: url("../fonts/DroidSans-webfont.woff");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Droid Sans";
+	src: url("../fonts/DroidSans-Bold-webfont.woff");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
 :root {
 	--clr-primary: hsl(125, 66%, 32%);
 	--clr-primary-light: hsl(125, 25%, 85%);
 	--clr-primary-dark: hsl(125, 44%, 16%);
-
 	--clr-primary-transparent: hsl(125 100% 16% / 0.8);
-
 	--clr-accent: hsl(77, 70%, 45%);
 	--clr-accent-light: hsl(77, 44%, 67%);
 	--clr-accent-dark: hsl(77, 44%, 17%);
-
 	--clr-extra: hsl(56, 100%, 47%);
 	--clr-extra-light: hsl(56, 70%, 77%);
 	--clr-extra-dark: hsl(56, 70%, 27%);
-
 	--clr-white: hsl(0, 100%, 100%);
 	--clr-neutral-100: hsl(0, 0%, 93%);
 	--clr-neutral-200: hsl(0, 0%, 83%);
@@ -24,7 +178,6 @@
 	--clr-neutral-700: hsl(0, 0%, 33%);
 	--clr-neutral-900: hsl(0, 0%, 20%);
 	--clr-black: hsl(0, 0%, 10%);
-
 	--clr-secondary: var(--clr-neutral-300);
 	--clr-success: green;
 	--clr-danger: red;
@@ -32,10 +185,14 @@
 	--clr-info: teal;
 }
 
+::-moz-selection {
+	color: var(--selection-txt);
+	background-color: var(--selection-bg);
+}
 
 ::selection {
 	color: var(--selection-txt);
-	background-color: var(--selection-bg)
+	background-color: var(--selection-bg);
 }
 
 body {
@@ -50,16 +207,12 @@ body {
 
 a {
 	color: var(--link-color);
-
-	&:hover,
-	&:active {
-		color: var(--link-hover-color);
-	}
-
-	&.btn:hover,
-	&.btn:active {
-		color: var(--link-hover-alt);
-	}
+}
+a:hover, a:active {
+	color: var(--link-hover-color);
+}
+a.btn:hover, a.btn:active {
+	color: var(--link-hover-alt);
 }
 
 h1,
@@ -83,29 +236,25 @@ button {
 	So, we give it a position: relative
 	*/
 	position: relative;
-	// z-index: -1;
 }
 
 .items-below .newsflash-title {
-	@include a.bg(primary)
+	background-color: var(--bg-primary);
 }
 
 .category-module li {
-	@include a.bg(primary);
+	background-color: var(--bg-primary);
 }
 
 .mod-articlesnews__item {
 	border-color: var(--bg-neutral);
 }
 
-footer {
-	.container {
-		@include a.bg(neutral);
-	}
-
-	h3 {
-		color: var(--clr-txt-footer)
-	}
+footer .container {
+	background-color: var(--bg-neutral);
+}
+footer h3 {
+	color: var(--clr-txt-footer);
 }
 
 .blog-item,
@@ -113,18 +262,17 @@ footer {
 	border-color: var(--card-border-color);
 }
 
-[role='tooltip'] {
+[role=tooltip] {
 	background-color: var(--clr-neutral-700);
 	color: var(--background-color);
 	border-color: var(--link-hover-color);
-	box-shadow: 0 0 15px 5px var(--clr-shadow);
+	-webkit-box-shadow: 0 0 15px 5px var(--clr-shadow);
+	        box-shadow: 0 0 15px 5px var(--clr-shadow);
 }
-
 
 :root {
 	--selection-txt: var(--clr-black);
 	--selection-bg: var(--clr-accent);
-
 	--text-color: var(--clr-neutral-900);
 	--background-color: var(--clr-white);
 	--link-color: var(--clr-primary);
@@ -133,14 +281,12 @@ footer {
 	--clr-heading: var(--clr-primary);
 	--clr-contrast-bg: #000;
 	--clr-contrast-txt: #fff;
-	--clr-shadow: #{a.$trans-dark};
+	--clr-shadow: rgba(0, 0, 0, 0.25);
 	--clr-icon: var(--clr-neutral-200);
 	--clr-txt-footer: var(--clr-neutral-600);
 	--active-menu-color: #fff;
-
 	--bg-neutral: var(--clr-neutral-100);
 	--bg-primary: var(--clr-primary-light);
-
 	--card-border-color: #ddd;
 	--box-shadow-color: white;
 }
@@ -157,13 +303,14 @@ footer {
 		--clr-heading: var(--clr-accent-light);
 		--clr-contrast-bg: #fff;
 		--clr-contrast-txt: #000;
-		--clr-shadow: #{a.$trans-light};
+		--clr-shadow: rgba(255, 255, 255, 0.25);
 		--clr-icon: var(--clr-neutral-900);
 		--active-menu-color: black;
 
-		--bg-neutral: #{a.$trans-dark};
+		--bg-neutral: rgba(0, 0, 0, 0.25);
 
 		--card-border-color: var(--bg-neutral);
 		--box-shadow-color: var(--clr-neutral-600);
 	}
 }*/
+/*# sourceMappingURL=editor.css.map */

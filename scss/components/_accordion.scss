@@ -1,6 +1,5 @@
 @use 'abstracts' as a;
 
-
 .accordion-header {
   font-size: a.$fs-h4;
   // color: var(--link-color);
@@ -42,13 +41,21 @@
 dd[aria-hidden="true"] {
   max-height: 0;
   padding-block: 0;
-  display: none;
+
+  /*Focusable descendents within an `[aria-hidden="true"]` element prevent
+   those interactive elements from being available to users of assistive technologies like screen readers.*/
+  a {
+    display: none;
+  }
 }
 
 dd[aria-hidden="false"] {
   max-height: 40rem;
   padding-block: 1rem;
-  display: block;
+
+  a {
+    display: inline;
+  }
 }
 
 dd.panel {
